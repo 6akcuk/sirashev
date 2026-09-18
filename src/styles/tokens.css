@@ -1,0 +1,64 @@
+/*
+ * Design tokens. Every colour on the site resolves through one of these
+ * custom properties; the dark palette is a redefinition of the same names
+ * under prefers-color-scheme only — there is no toggle and nothing is stored.
+ *
+ * Values are taken from docs/design-reference.html.
+ */
+:root {
+  --bg: #faf9f6;
+  --ink: #1c1b19;
+  --card: #fff;
+  --line: #e2e0da;
+  --line2: #d6d3cc;
+  --muted: #6f6d67;
+  --faint: #85837d;
+  --body: #4d4b46;
+  --body2: #2e2c28;
+  --accent: oklch(55% 0.13 45);
+  --accent-ink: #fff;
+  --accent-soft: oklch(96% 0.02 45);
+  --accent-line: oklch(70% 0.1 45);
+  --ph1: #e8e6e0;
+  --ph2: #efede8;
+  --inv-bg: #1c1b19;
+  --inv-ink: #faf9f6;
+  --inv-muted: #a8a59d;
+  --inv-body: #e8e6e0;
+  --inv-accent: oklch(78% 0.11 45);
+  color-scheme: light;
+
+  /* Instrument Sans and JetBrains Mono are self-hosted and subset in a later
+     step; until then the stacks fall back to system faces. No Google Fonts. */
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --sidebar-width: 300px;
+  --breakpoint-mobile: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --ink: #ece9e2;
+    --card: #1d1c19;
+    --line: #2c2a26;
+    --line2: #3a3832;
+    --muted: #9d9a92;
+    --faint: #807d75;
+    --body: #c4c1b9;
+    --body2: #d8d5cd;
+    --accent: oklch(74% 0.13 45);
+    --accent-ink: #141311;
+    --accent-soft: oklch(24% 0.03 45);
+    --accent-line: oklch(50% 0.1 45);
+    --ph1: #24221e;
+    --ph2: #2a2823;
+    --inv-bg: #ece9e2;
+    --inv-ink: #141311;
+    --inv-muted: #6f6d67;
+    --inv-body: #2e2c28;
+    --inv-accent: oklch(50% 0.13 45);
+    color-scheme: dark;
+  }
+}
