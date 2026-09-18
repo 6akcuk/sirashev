@@ -1,0 +1,15 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import PageHeader from '../components/PageHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { identity } from '../site/consts/identity';
+---
+
+<BaseLayout
+  title={`Experience — ${identity.name}`}
+  description="Twelve years of commercial fullstack work, mostly remote with teams in Spain, the US, Australia and Russia."
+>
+  <ContentPage maxWidth="900px">
+    <PageHeader heading="Experience" />
+  </ContentPage>
+</BaseLayout>

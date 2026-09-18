@@ -1,0 +1,15 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import PageHeader from '../components/PageHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { identity } from '../site/consts/identity';
+---
+
+<BaseLayout
+  title={`Projects — ${identity.name}`}
+  description="Cases owned end to end: the shape of the problem and the decisions behind each system."
+>
+  <ContentPage maxWidth="860px">
+    <PageHeader heading="Projects" />
+  </ContentPage>
+</BaseLayout>

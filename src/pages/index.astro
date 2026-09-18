@@ -1,0 +1,15 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import PageHeader from '../components/PageHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { identity } from '../site/consts/identity';
+---
+
+<BaseLayout
+  title={`${identity.name} — fullstack engineer, production AI systems`}
+  description="Fullstack engineer building AI systems that survive to production. Open to senior and staff roles, remote or relocation with visa sponsorship."
+>
+  <ContentPage maxWidth="860px">
+    <PageHeader heading="About" />
+  </ContentPage>
+</BaseLayout>
