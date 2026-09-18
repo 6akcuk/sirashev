@@ -1,0 +1,84 @@
+---
+import { identity } from '../site/consts/identity';
+---
+
+<div class="identity">
+  <a class="avatar" href="/" aria-label={`${identity.name} — home`}>
+    <span class="avatar-label">photo</span>
+  </a>
+  <div class="identity-text">
+    <a class="name" href="/">{identity.name}</a>
+    <p class="tagline">{identity.tagline}</p>
+    <p class="availability">{identity.availability}</p>
+  </div>
+</div>
+
+<style>
+  .identity {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .avatar {
+    flex: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: repeating-linear-gradient(135deg, var(--ph1) 0 8px, var(--ph2) 8px 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .avatar-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--faint);
+  }
+
+  .identity-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .name {
+    text-decoration: none;
+    font-size: 26px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    margin: 0;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .availability {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .identity {
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    .name {
+      font-size: 22px;
+    }
+  }
+</style>

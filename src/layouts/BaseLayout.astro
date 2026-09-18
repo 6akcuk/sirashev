@@ -1,0 +1,52 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import { identity } from '../site/consts/identity';
+import '../styles/tokens.css';
+import '../styles/base.css';
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={identity.name} />
+    <link rel="canonical" href={new URL(pathname, Astro.site)} />
+  </head>
+  <body>
+    <div class="shell">
+      <Sidebar pathname={pathname} />
+      <main class="content">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  .shell {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    min-height: 100vh;
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  @media (max-width: 760px) {
+    .shell {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import { externalLinks } from '../site/consts/externalLinks';
+---
+
+<div class="links">
+  {externalLinks.map((link) => <a class="link" href={link.href} rel="me noopener">{link.label}</a>)}
+</div>
+
+<style>
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .link {
+    text-decoration: none;
+  }
+</style>

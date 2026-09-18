@@ -1,0 +1,50 @@
+---
+import { navItems } from '../site/consts/navItems';
+import { isActiveNavItem } from '../site/rules/isActiveNavItem';
+
+type Props = { pathname: string };
+
+const { pathname } = Astro.props;
+---
+
+<nav class="nav" aria-label="Sections">
+  {
+    navItems.map((item) => {
+      const active = isActiveNavItem(item, pathname);
+      return (
+        <a href={item.href} class:list={['nav-item', { active }]} aria-current={active ? 'page' : undefined}>
+          {item.label}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 15px;
+  }
+
+  .nav-item {
+    text-decoration: none;
+    padding: 7px 0;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .nav-item.active {
+    color: var(--ink);
+  }
+
+  @media (max-width: 760px) {
+    .nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
