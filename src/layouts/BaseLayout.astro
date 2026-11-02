@@ -20,13 +20,22 @@ const pathname = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(pathname, Astro.site)} />
+    <meta property="og:image" content={new URL('/social-card.png', Astro.site)} />
+    <meta property="og:image:alt" content="Denis Sirashev — Software Engineer & AI Engineer. Fullstack products, agents and AI pipelines." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="author" content={identity.name} />
     <link rel="canonical" href={new URL(pathname, Astro.site)} />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="shell">
       <Sidebar pathname={pathname} />
-      <main class="content">
+      <main class="content" id="main">
         <slot />
       </main>
     </div>

@@ -1,0 +1,13 @@
+{
+  "order": "2015-06",
+  "period": "Jun 2015 — Mar 2020",
+  "title": "Independent Software Engineer",
+  "company": "Client contracts via Upwork",
+  "location": "International clients · remote",
+  "bullets": [
+    "Knkt Interactive, Australia: independently built and launched a nationwide vaccination-booking platform covering clinics, slots, nurses, invitations and patient booking. Served an estimated 100,000+ patients.",
+    "Exit Intelligence, US: built a React campaign analytics portal and Laravel API, with Aurora aggregate storage refreshed every 15–30 minutes.",
+    "Exit Intelligence: built a production Laravel email service with shared provider interfaces; integrated Mailchimp, SendGrid and campaign actions.",
+    "ScoreMore Mobile, US: built a React Native app, database and AWS AppSync schema for surveys, prize draws, events and quizzes. Left before the production launch."
+  ]
+}

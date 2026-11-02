@@ -1,0 +1,74 @@
+{
+  "num": "03",
+  "title": "Yandex Market — popups without the pile-up",
+  "summary": "Backend onboarding eligibility, a frontend popup queue and an internal emulator for inspecting and simulating the whole queue.",
+  "stack": [
+    "Apiary (Next.js)",
+    "React",
+    "Node.js",
+    "RxJS",
+    "Cookies",
+    "ClickHouse",
+    "Microservices"
+  ],
+  "year": "2022–25",
+  "role": "Software Engineer, Interfaces",
+  "company": "Yandex Market",
+  "status": "Commercial · shipped",
+  "description": "The backend determines which onboardings qualify; the frontend decides which popup can appear now. Alongside the customer-facing system, I built an internal queue emulator for employees to inspect timing, filter scenarios and simulate display.",
+  "sections": [
+    {
+      "heading": "Backend: qualify the onboardings",
+      "body": "When a Market page loads, it requests the onboarding queue from the backend. The backend reads candidates sequentially and evaluates their conditions. Where a condition needs additional data, it calls the relevant microservices for users, orders, or user tags and markers. Requirements are compared with current values, including dates, device and any additional labels supplied to the flow. All of this eligibility work happens on the backend."
+    },
+    {
+      "heading": "Keep the Node.js event loop available",
+      "body": "Backend condition evaluation is split into small tasks that yield to the Node.js event loop between units of work. This prevents queue processing from monopolizing the server event loop. The backend returns zero or more matching onboardings to the browser, where they enter the separate popup display queue."
+    },
+    {
+      "heading": "Frontend: coordinate every popup",
+      "body": "Matching onboardings enter a separate frontend display queue. That queue also coordinates advertising and ordinary interface windows, including forms, menus and settings. It considers display priorities and current UI status, then chooses the first eligible item. At most one popup is visible at a time, preventing windows from stacking and competing for the user’s attention."
+    },
+    {
+      "heading": "Navigation advances the selection",
+      "body": "When the user navigates to another page, the display queue runs its selection again and chooses the next eligible popup. Separating qualification from presentation lets the system prepare relevant candidates without allowing each feature to interrupt the user independently."
+    },
+    {
+      "heading": "An internal emulator for the whole queue",
+      "body": "I built a separate tool for employees to inspect and simulate the onboarding queue. Filters across all queue parameters sat at the top. Below them, popup previews formed a diagram of the whole queue, with labeled arrows showing which popup came next, including time delays and display dates. Employees could change the scenario and emulate how popups would be shown before a campaign reached customers. Transitions could branch: clicking different buttons in one popup could open different subsequent popups. The diagram made these button-dependent paths visible."
+    },
+    {
+      "heading": "Making the platform usable by marketing",
+      "body": "I extended the existing onboarding queue across Market, Market B2B and Yandex Go. An emulator for rules, user states, dates and locations helped marketing move from 2–4 to about 20 concurrent popup campaigns. Concurrent campaigns do not mean simultaneously visible windows: the display queue still allows only one at a time."
+    },
+    {
+      "heading": "Measured product and performance results",
+      "body": "I added a reusable popup authentication action; internal 11.11 campaign analytics showed an approximately 10% relative increase in authentication conversion. Stabilizing popup and banner heights, prerendering and deferring data loading also brought CLS and FCP within target thresholds, validated through Lighthouse and internal monitoring."
+    }
+  ],
+  "published": true,
+  "links": [],
+  "images": [
+    {
+      "src": "/images/yandex-market/onboarding-architecture.svg",
+      "alt": "Yandex Market architecture with explicit backend and frontend boundaries: Node.js backend evaluates onboarding rules with conditional microservice requests and yields between tasks; the browser receives zero or more eligible onboardings and coordinates one-at-a-time popup display.",
+      "caption": "Backend eligibility and frontend popup orchestration. Small tasks yield to the Node.js event loop on the server. Conceptual reconstruction of the implemented architecture; open to view at full size.",
+      "width": 1040,
+      "height": 1490
+    },
+    {
+      "src": "/images/yandex-market/queue-emulator.svg",
+      "alt": "Internal queue emulator with filters above four popup previews. Welcome branches to Campaign or Preferences depending on the clicked button; Campaign continues to Confirmation. Arrows label the actions and timing conditions.",
+      "caption": "Internal emulator: filters above popup previews, with labeled, button-dependent branches to subsequent windows. Reconstructed layout with illustrative popup content.",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "src": "/images/yandex-market/popup-example.png",
+      "alt": "Yandex Market mobile interface showing a promotional VTB popup over a dimmed product grid, with a call-to-action button and close control. Original Russian UI.",
+      "caption": "Example of a promotional popup on Yandex Market, shown in the original Russian UI. Screenshot supplied by the author to illustrate the presentation layer.",
+      "width": 392,
+      "height": 852
+    }
+  ]
+}

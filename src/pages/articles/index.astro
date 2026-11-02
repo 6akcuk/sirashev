@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { identity } from '../../site/consts/identity';
+const articles = (await getCollection('articles')).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const date = (value: Date) => new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }).format(value);
+---
+<BaseLayout title={`Articles — ${identity.name}`} description="Articles by Denis Sirashev on software engineering, AI-assisted development, and building products.">
+  <ContentPage maxWidth="1120px">
+    <PageHeader heading="Articles"><p class="intro">From code to product: notes on software engineering, AI-assisted development, and the decisions behind the things I build.</p></PageHeader>
+    <section aria-label="All articles" class="writing-list">
+      {articles.map(({ id, data }) => <article>
+        <div class="eyebrow"><time datetime={data.publishedAt.toISOString()}>{date(data.publishedAt)}</time> / {data.readingTime} MIN READ</div>
+        <h3><a href={`/articles/${id}/`}>{data.title}</a></h3>
+        <p>{data.description}</p>
+        <span class="stack">{data.tags.map(tag => `#${tag}`).join('  ')}</span>
+      </article>)}
+    </section>
+    <p class="quiet">Originally published on DEV Community. The articles remain in their original language.</p>
+  </ContentPage>
+</BaseLayout>

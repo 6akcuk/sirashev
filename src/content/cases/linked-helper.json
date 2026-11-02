@@ -1,0 +1,62 @@
+{
+  "num": "02",
+  "title": "One app. Multiple accounts.",
+  "summary": "Multi-account workflows, shared CRM access, workspaces and AI generation in a production Electron product.",
+  "stack": [
+    "React",
+    "Electron",
+    "NestJS",
+    "TypeScript"
+  ],
+  "year": "2025–26",
+  "role": "Fullstack Developer",
+  "company": "Linked Helper",
+  "status": "Commercial · shipped",
+  "description": "Taking a desktop product beyond a single account meant changing how the application requests, displays and exports data — and how the backend handles workspaces and billing.",
+  "diagram": [
+    "Multiple accounts",
+    "Shared application",
+    "Workspace & billing"
+  ],
+  "sections": [
+    {
+      "heading": "The account boundary",
+      "body": "I built and shipped multi-account support, reworking React architecture, contexts, API requests and exports. Users can view campaigns and messages across accounts in a single application instance. The product images above show the account selector in Cloud CRM and the campaign profile picker: concrete examples of bringing account context into shared screens and workflows."
+    },
+    {
+      "heading": "Workspaces, end to end",
+      "body": "I migrated account administration, access controls, billing and promo forms to workspaces, and moved the backend promo logic from organizations to workspaces using NestJS."
+    },
+    {
+      "heading": "AI features with billing attached",
+      "body": "I delivered the text-generation configuration UI, generation-service integration, and token calculation and charging. AI replies and outbound message generation shipped to production."
+    },
+    {
+      "heading": "Making the codebase easier to change",
+      "body": "I introduced Storybook, adapted Webpack and migrated to React 18 while resolving incompatible UI dependencies. Stories covered core components; Jest tests covered backend features and fixes."
+    }
+  ],
+  "published": true,
+  "links": [
+    {
+      "label": "Cloud DB — product details & image source",
+      "url": "https://www.linkedhelper.com/features/cloud-db"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/linked-helper/cloud-crm.webp",
+      "alt": "Linked Helper Cloud CRM with a Viewing as account selector and campaign filters",
+      "caption": "Cloud CRM — account selection and filters in a shared interface. Product image from the official Linked Helper Cloud DB page.",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "src": "/images/linked-helper/list-manager.webp",
+      "alt": "Linked Helper campaign profile picker with selected CRM leads and a multi-account filter",
+      "caption": "Campaign profile selection — choose an account, filter CRM profiles and add selected leads to a campaign. Product image from the official Linked Helper Cloud DB page.",
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 import type { NavItem } from '../types/NavItem';
 
-/** Exactly three sections. The contact CTA is deliberately not one of them. */
+/** Main sections; the contact CTA is separate. */
 export const navItems: NavItem[] = [
   { label: 'About', href: '/' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Articles', href: '/articles' },
   { label: 'Experience', href: '/experience' },
 ];

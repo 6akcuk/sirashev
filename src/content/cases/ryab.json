@@ -1,0 +1,72 @@
+{
+  "num": "01",
+  "title": "Ryab — a living map of the city",
+  "summary": "An anonymous city-event map with local AI processing, live signals and community confirmations. Built with AI agents, GitHub Issues and automated quality checks.",
+  "stack": [
+    "React",
+    "MapLibre",
+    "Node.js",
+    "BullMQ",
+    "Qwen",
+    "WebGL"
+  ],
+  "year": "2026",
+  "role": "Developer & AI engineer",
+  "company": "Ryab · personal project",
+  "status": "Working development preview",
+  "description": "Ryab turns local reports into a map of what is happening nearby. I define requirements and technical direction, validate user workflows, and own performance and deployment. A working development version is available at dev.ryab.io. I build the project with AI coding agents, combining AFK execution, human-in-the-loop review and multi-agent coordination.",
+  "diagram": [
+    "Text & media",
+    "BullMQ · local Qwen",
+    "City-event map"
+  ],
+  "sections": [
+    {
+      "heading": "The system",
+      "body": "The product combines React, React Native, TypeScript and MapLibre with Node.js, Express, PostgreSQL, Redis and BullMQ. I set up local text and media processing with Qwen, connecting Yandex Cloud to a GPU node through WireGuard. Media processing runs asynchronously through BullMQ."
+    },
+    {
+      "heading": "Moving work to the GPU",
+      "body": "I directed the move from JavaScript / CPU media processing to WebGL. Frame processing fell from 1,445 to 196 ms, and one-minute video processing from 349 to 138 seconds. The media benchmarks used identical hardware, inputs and models; these are development benchmarks, not production traffic metrics."
+    },
+    {
+      "heading": "Keeping the map responsive",
+      "body": "Caching and selective map updates reduced movement processing from 600 to 280 ms. The focus was reducing repeated work when interacting with the map."
+    },
+    {
+      "heading": "AI development: AFK, HITL and multiple agents",
+      "body": "I combine AFK (away-from-keyboard) execution for scoped implementation tasks with HITL (human-in-the-loop) involvement for requirements, architecture, review and product validation. Multiple agents work on defined tasks with clear boundaries. I coordinate their work, integrate the changes and remain responsible for the resulting software."
+    },
+    {
+      "heading": "GitHub Issues and the agent harness",
+      "body": "I track work through GitHub Issues, giving agents a concrete task, context and acceptance criteria. The harness brings together repository instructions, tools and feedback loops. Existing code examples provide reference patterns for implementation, helping agents follow the project’s conventions."
+    },
+    {
+      "heading": "Quality checks and feedback",
+      "body": "Typecheck, lint and tests form the automated quality checks in the development workflow. Their results feed back into implementation and fixes. I review the resulting code and validate user-facing behavior alongside those checks."
+    }
+  ],
+  "published": true,
+  "links": [
+    {
+      "label": "Open development preview",
+      "url": "https://dev.ryab.io"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/ryab/overview.webp",
+      "alt": "English Ryab design previews: day and night city maps with event markers, category filters and local reports.",
+      "caption": "Day and night map views, translated from the original Ryab design handoff. Design previews with sample data, rather than screenshots of the current development build. Map data © OpenStreetMap contributors; tiles by OpenFreeMap.",
+      "width": 1440,
+      "height": 1160
+    },
+    {
+      "src": "/images/ryab/event-card.webp",
+      "alt": "English Ryab event-card design showing a collision report, location, three confirmations and actions to confirm, dispute or add details.",
+      "caption": "Event details and community confirmation. English design preview with sample data. Map data © OpenStreetMap contributors; tiles by OpenFreeMap.",
+      "width": 804,
+      "height": 1748
+    }
+  ]
+}

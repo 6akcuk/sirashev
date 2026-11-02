@@ -1,0 +1,67 @@
+{
+  "num": "04",
+  "title": "Danila-master — from product options to a visual sketch",
+  "summary": "An AngularJS 1.x configurator with a custom rotation carousel, Canvas editor, database structure and internal configuration forms.",
+  "stack": [
+    "AngularJS 1.x",
+    "Canvas"
+  ],
+  "year": "2014–15",
+  "role": "Fullstack Developer, later Team Lead",
+  "company": "Danila-master",
+  "status": "Commercial · shipped",
+  "description": "I built an AngularJS 1.x monument configurator with a rotatable pseudo-3D preview and a Canvas decoration editor. Customers choose a compatible set, configure its dimensions and finish, then compose a personalized sketch for a price estimate. I also built the underlying database tables and relationships, and configuration forms for administrators and managers.",
+  "sections": [
+    {
+      "heading": "Product choices that depend on each other",
+      "body": "A monument is a set of related parts: the stele, pedestal, flower bed or covering slab, and polishing finish. I implemented compatibility rules and calculated pricing. The interface updates related dimensions together: in the current public version, selecting a 100 cm stele instead of 80 cm also changes its width from 40 to 45 cm."
+    },
+    {
+      "heading": "The data and tools behind the configurator",
+      "body": "I created the database tables, dependencies and relationships underlying the configurator, together with configuration forms for administrators and managers. This internal part let staff configure the data behind the customer-facing experience. My work covered both the public interface and the structure and tools needed to manage it."
+    },
+    {
+      "heading": "A rotatable preview from a sequence of images",
+      "body": "I wrote the rotation carousel entirely from scratch. It creates a pseudo-3D view by moving through a sequence of monument images captured from different angles, allowing customers to rotate the preview and inspect the shape of the configured monument."
+    },
+    {
+      "heading": "From configuration to decoration",
+      "body": "The workflow separates configuration, decoration and the result. The selected set carries into the visual editor, where customers can choose the surface to decorate and work with a portrait, names, memorial dates, an epitaph and decorative images. This connects physical product options with the composition of a personal design."
+    },
+    {
+      "heading": "A canvas for a personal sketch",
+      "body": "I worked with Canvas to render the monument together with inscriptions, icons and symbols, building the visual editing experience in AngularJS 1.x. The editor combines portrait upload, name blocks, lettering styles, memorial dates, epitaphs and decorative images. Text becomes an editable object on the monument, so customers can compose the design directly on the preview."
+    },
+    {
+      "heading": "An estimate with a human handoff",
+      "body": "The interface presents the configured price as an estimate and explains that a manager confirms the final cost. The decoration step leads to saving the sketch and requesting a preliminary calculation, bringing product selection and personalization together before the sales handoff."
+    },
+    {
+      "heading": "My role and the live reference",
+      "body": "I developed the configurator in AngularJS 1.x during my time at Danila-master in 2014–2015. Alongside it, I maintained the OpenCart store and built a Yii manager portal, later leading three developers. The screenshots show the public website as inspected in October 2026, which may include subsequent changes."
+    }
+  ],
+  "published": true,
+  "links": [
+    {
+      "label": "Explore the live configurator",
+      "url": "https://danila-master.ru/products/model-dp-set.html"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/danila-master/configuration.webp",
+      "alt": "Danila-master configurator with a monument preview, dimension choices and a price estimate",
+      "caption": "Dimensions and component configuration. Current public website, captured October 2026; original Russian interface.",
+      "width": 1140,
+      "height": 740
+    },
+    {
+      "src": "/images/danila-master/visual-editor.webp",
+      "alt": "Danila-master visual editor with sample name text selected on the monument canvas, lettering styles and alignment controls",
+      "caption": "Name editing on the monument canvas, with lettering styles and alignment controls. Illustrative text entered in the current public editor, October 2026; original Russian interface.",
+      "width": 1140,
+      "height": 1040
+    }
+  ]
+}

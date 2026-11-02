@@ -1,0 +1,13 @@
+{
+  "order": "2025-03",
+  "period": "Mar 2025 — Jun 2026",
+  "title": "Fullstack Developer",
+  "company": "Linked Helper",
+  "location": "Remote",
+  "bullets": [
+    "Shipped multi-account support across React architecture, contexts, API requests and exports in an Electron app.",
+    "Migrated account administration, access controls, billing and promo forms to workspaces, including NestJS backend logic.",
+    "Delivered AI generation configuration, service integration and token billing for production replies and outbound messages.",
+    "Introduced Storybook, migrated to React 18 and added Jest coverage for backend features and fixes."
+  ]
+}

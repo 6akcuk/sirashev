@@ -1,15 +1,60 @@
 ---
+import { getCollection } from 'astro:content';
 import ContentPage from '../components/ContentPage.astro';
-import PageHeader from '../components/PageHeader.astro';
+import ProjectList from '../components/ProjectList.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { identity } from '../site/consts/identity';
+const featuredProjectIds = ['ryab', 'linked-helper', 'yandex-market'];
+const projects = (await getCollection('cases', ({ id, data }) => data.published && featuredProjectIds.includes(id)))
+  .sort((a, b) => featuredProjectIds.indexOf(a.id) - featuredProjectIds.indexOf(b.id));
+const jobs = (await getCollection('jobs')).sort((a,b) => b.data.order.localeCompare(a.data.order));
 ---
-
-<BaseLayout
-  title={`${identity.name} — fullstack engineer, production AI systems`}
-  description="Fullstack engineer building AI systems that survive to production. Open to senior and staff roles, remote or relocation with visa sponsorship."
->
-  <ContentPage maxWidth="860px">
-    <PageHeader heading="About" />
+<BaseLayout title={`${identity.name} — Software Engineer & AI Engineer`} description="Software and AI engineer with 12+ years of commercial development. Fullstack products, multi-agent workflows, agent harnesses and AI processing pipelines.">
+  <ContentPage maxWidth="1120px">
+    <header class="hero">
+      <div class="eyebrow hero-label"><span class="status-dot"></span> Software Engineer / AI Engineer</div>
+      <h1>I build software.<br class="desktop-break" /> With <span>AI in the loop.</span></h1>
+      <p class="hero-copy">12+ years of software engineering, now applied to building with AI: fullstack products, multi-agent workflows, agent harnesses and AI processing pipelines. I own the architecture, validation and delivery.</p>
+      <div class="hero-actions"><a class="text-link" href="/projects">Explore my work <span aria-hidden="true">↗</span></a><a class="secondary-link" href="/Denis-Sirashev-Resume.pdf" download>Résumé EN ↓</a><a class="secondary-link" href="/Denis-Sirashev-Resume-RU.pdf" download lang="ru">Резюме RU ↓</a></div>
+    </header>
+    <section class="stats" aria-label="Career highlights">
+      <div><strong>12+ <span>years</span></strong><p>of commercial development</p></div>
+      <div><strong>19</strong><p>authentication entry points unified at Yandex Market</p></div>
+      <div><strong>100k+</strong><p>estimated patients served by a vaccination-booking platform</p></div>
+    </section>
+    <section>
+      <div class="section-heading"><h2>Selected work</h2><a href="/projects">All projects <span aria-hidden="true">→</span></a></div>
+      <ProjectList projects={projects} />
+    </section>
+    <section class="about-grid">
+      <div><h2 class="section-label">How I build with AI</h2><p class="statement">Define the system.<br />Give agents the context.<br />Validate what ships.</p></div>
+      <div class="prose">
+        <p>I've shipped web, desktop and mobile software for teams in Russia, Spain, the US and Australia. That engineering experience shapes how I use AI: I define the requirements, design the boundaries and take responsibility for the result.</p>
+        <p><strong>Multi-agent workflows.</strong> In Ryab and StarTrack, I combine AFK execution with human-in-the-loop review, coordinate multiple agents and track scoped tasks through GitHub Issues.</p>
+        <p><strong>Agent harnesses.</strong> I build the working environment around coding agents: repository instructions, tools, context and code examples. Typecheck, lint and tests provide feedback; I review the code and validate the product.</p>
+        <p><strong>AI pipelines.</strong> I connect models to application workflows, queues and infrastructure. In Ryab, that means local Qwen processing, asynchronous media jobs and a GPU node connected to Yandex Cloud.</p>
+        <div class="tags"><span>Fullstack development</span><span>Multi-agent workflows</span><span>Agent harnesses</span><span>AI pipelines</span></div>
+      </div>
+    </section>
+    <section aria-labelledby="writing-heading">
+      <div class="section-heading"><h2 id="writing-heading">Writing</h2><a href="https://dev.to/6akcuk" target="_blank" rel="noopener noreferrer">All articles ↗</a></div>
+      <div class="writing-list">
+        <article>
+          <span class="eyebrow">AI development / Context &amp; review</span>
+          <h3><a href="https://dev.to/6akcuk/how-i-split-a-week-long-task-into-9-ai-sessions-and-shipped-it-in-2-days-3m3h" target="_blank" rel="noopener noreferrer">How I Split a Week-Long Task Into 9 AI Sessions and Shipped It in 2 Days <span aria-hidden="true">↗</span></a></h3>
+          <p>A branching React form, scoped tasks, fresh agent sessions and hands-on review — including the architecture mistake I caught along the way.</p>
+        </article>
+        <article>
+          <span class="eyebrow">StarTrack / Prototyping &amp; product decisions</span>
+          <h3><a href="https://dev.to/6akcuk/how-ai-changes-prototyping-and-testing-ideas-1phc" target="_blank" rel="noopener noreferrer">How AI Changes Prototyping and Testing Ideas <span aria-hidden="true">↗</span></a></h3>
+          <p>How StarTrack grew from a family problem, and how interactive AI prototypes helped me test and reject a reward mechanic before implementing it.</p>
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="section-heading"><h2>Experience, at a glance</h2><a href="/experience">Full history →</a></div>
+      <div class="compact-jobs">{jobs.map(({data:j}) => <div><span class="mono">{j.period}</span><div><strong>{j.company}</strong><p>{j.title}</p></div></div>)}</div>
+    </section>
+    <section class="closing"><span class="eyebrow">Let's build something useful</span><h2>Have a role in mind?</h2><p>Open to software engineering and AI engineering roles, remote work and relocation.<br />Based in Russia, UTC+5. Relocation requires visa sponsorship.</p><a class="text-link" href={`mailto:${identity.email}`}>{identity.email} ↗</a></section>
   </ContentPage>
 </BaseLayout>

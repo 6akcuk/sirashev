@@ -1,15 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
 import ContentPage from '../components/ContentPage.astro';
 import PageHeader from '../components/PageHeader.astro';
+import ProjectList from '../components/ProjectList.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { identity } from '../site/consts/identity';
+const projects = (await getCollection('cases', ({ data }) => data.published)).sort((a,b) => a.data.num.localeCompare(b.data.num));
 ---
-
-<BaseLayout
-  title={`Projects — ${identity.name}`}
-  description="Cases owned end to end: the shape of the problem and the decisions behind each system."
->
-  <ContentPage maxWidth="860px">
-    <PageHeader heading="Projects" />
+<BaseLayout title={`Projects — ${identity.name}`} description="Selected engineering work: Linked Helper multi-account support, Yandex Market authentication and onboarding, Ryab's local AI media pipeline, and an AngularJS 1.x product configurator.">
+  <ContentPage maxWidth="1120px">
+    <PageHeader heading="Selected work"><p class="intro">The problems, the work I owned, and the results. Commercial features alongside personal experiments, with their release status made explicit.</p></PageHeader>
+    <ProjectList projects={projects} />
+    <section class="note"><h2>Also exploring: Herald</h2><p>A Telegram event aggregation bot with drafts, text and media moderation, attribute extraction, deduplication, event grouping and publishing. I directed implementation through Claude Code and validated user workflows.</p><span class="eyebrow">2025–2026 / Personal project / No public release</span></section>
+    <p class="quiet">Commercial work is described at the feature level, with public product references and images where available.</p>
   </ContentPage>
 </BaseLayout>

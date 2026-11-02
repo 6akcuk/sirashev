@@ -1,0 +1,13 @@
+{
+  "order": "2014-01",
+  "period": "2014 — Jun 2015",
+  "title": "Fullstack Developer, later Team Lead",
+  "company": "Danila-master",
+  "location": "Russia",
+  "bullets": [
+    "Maintained an OpenCart store; built a Yii manager portal and AngularJS 1.x product configurator with visual editing, compatibility rules and calculated pricing.",
+    "Created the configurator’s database tables, dependencies and relationships, plus internal configuration forms for administrators and managers.",
+    "Led three direct reports, handling hiring, task allocation, code review and technical decisions.",
+    "Responded to a DDoS incident by placing the site behind a gateway and removing origin-IP exposure."
+  ]
+}

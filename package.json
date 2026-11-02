@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "pnpm build && node scripts/check-built-site.mjs",
+    "deploy": "pnpm test && wrangler pages deploy dist --project-name sirashev --branch main"
   },
   "dependencies": {
     "astro": "^5.6.1"

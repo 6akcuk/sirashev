@@ -4,7 +4,7 @@ import { identity } from '../site/consts/identity';
 
 <div class="identity">
   <a class="avatar" href="/" aria-label={`${identity.name} — home`}>
-    <span class="avatar-label">photo</span>
+    <span class="avatar-label">DS</span>
   </a>
   <div class="identity-text">
     <a class="name" href="/">{identity.name}</a>
@@ -25,7 +25,8 @@ import { identity } from '../site/consts/identity';
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: repeating-linear-gradient(135deg, var(--ph1) 0 8px, var(--ph2) 8px 16px);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +35,8 @@ import { identity } from '../site/consts/identity';
 
   .avatar-label {
     font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--faint);
+    font-size: 22px;
+    color: var(--accent);
   }
 
   .identity-text {

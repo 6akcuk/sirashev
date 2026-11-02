@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
+import { identity } from '../../site/consts/identity';
+export async function getStaticPaths() {
+  return (await getCollection('articles')).map(article => ({ params: { slug: article.id }, props: { article } }));
+}
+const { article } = Astro.props;
+const { Content } = await render(article);
+const { data } = article;
+const date = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(data.publishedAt);
+---
+<BaseLayout title={`${data.title} — ${identity.name}`} description={data.description}>
+  <ContentPage maxWidth="960px">
+    <header class="case-header article-header">
+      <a class="back-link" href="/articles/">← All articles</a>
+      <h1>{data.title}</h1>
+      <p class="intro">{data.description}</p>
+      <div class="eyebrow article-meta"><time datetime={data.publishedAt.toISOString()}>{date}</time> / {data.readingTime} MIN READ</div>
+    </header>
+    <article class="article-body"><Content /></article>
+    <footer class="case-footer"><a href="/articles/">← All articles</a><a href={data.sourceUrl}>Read on DEV Community ↗</a></footer>
+  </ContentPage>
+</BaseLayout>

@@ -1,0 +1,51 @@
+{
+  "num": "05",
+  "title": "Playtomic Manager — tools for sports-club operations",
+  "summary": "Selected features in a team-built platform: payments, pricing rules, schedules, court management and a club TV interface.",
+  "stack": [
+    "React",
+    "Cypress"
+  ],
+  "year": "2020–22",
+  "role": "Senior Frontend Developer",
+  "company": "Playtomic",
+  "status": "Commercial · shipped features",
+  "description": "I contributed selected features to Playtomic’s sports-club management tools, working on payment interfaces, pricing rules, schedules and court management. I also built and launched a club TV interface for match statistics, player standings and schedules.",
+  "sections": [
+    {
+      "heading": "The product context",
+      "body": "Playtomic Manager brings club operations into one platform. The official video linked above introduces its calendar and facility scheduling, customer management, competitions, academy tools and analytics. It is a broader product overview; my contribution covers the specific features described below."
+    },
+    {
+      "heading": "Payments and configurable pricing",
+      "body": "I developed administrative payment interfaces and pricing rules based on date, area, sport and player count, supporting the different conditions under which a club sells access to its facilities."
+    },
+    {
+      "heading": "Organizing the frontend around features",
+      "body": "I migrated payments, schedules and court management to a feature-based architecture, organizing these parts of the application around their business responsibilities."
+    },
+    {
+      "heading": "A TV interface for the club",
+      "body": "I built and launched a sports-club TV interface showing match statistics, player standings and schedules, making this information available on screens at the club."
+    },
+    {
+      "heading": "Investigating unreliable end-to-end tests",
+      "body": "I prototyped a Cypress API record/replay plugin to address backend timeout failures. I validated stability on two tests; this was a focused prototype rather than a rollout across the entire test suite."
+    },
+    {
+      "heading": "My contribution and the public demo",
+      "body": "I worked at Playtomic from April 2020 to June 2022 as a Senior Frontend Developer. The video is a public overview of the broader product and may show changes introduced after my time there."
+    }
+  ],
+  "published": true,
+  "links": [
+    {
+      "label": "Watch the official Playtomic Manager overview",
+      "url": "https://www.youtube.com/watch?v=_lMtC5CB2Qk"
+    },
+    {
+      "label": "Calendar and court scheduling — 0:24",
+      "url": "https://www.youtube.com/watch?v=_lMtC5CB2Qk&t=24s"
+    }
+  ]
+}

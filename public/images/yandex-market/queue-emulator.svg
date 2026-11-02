@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1100" viewBox="0 0 1440 1100" role="img" aria-labelledby="title desc"><title id="title">Internal queue emulator with four popup previews</title><desc id="desc">Parameter filters sit above four consistently spaced popup previews. Welcome branches to Campaign or Preferences depending on the clicked button. Campaign continues to a fourth popup, Confirmation. Arrows carry action and timing labels. Illustrative reconstruction.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#7c786f"/></marker><style>text{font-family:Arial,Helvetica,sans-serif;fill:#252824}.label{font-size:14px;letter-spacing:1px;fill:#8f512f;font-weight:600}.h{font-size:23px;font-weight:600}.body{font-size:17px;fill:#62695f}.small{font-size:15px;fill:#62695f}.edge{fill:none;stroke:#7c786f;stroke-width:2;marker-end:url(#arrow)}</style></defs><rect width="1440" height="1100" rx="16" fill="#f4f2eb"/>
+<text x="44" y="46" class="label" >INTERNAL TOOL / EMPLOYEES</text>
+<text x="44" y="94" class="h" style="font-size:32px">See each popup. Follow what comes next.</text>
+<text x="44" y="128" class="body" >Filters above; popup previews and labeled, button-dependent transitions below.</text>
+<rect x="44" y="158" width="1352" height="156" rx="10" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="68" y="192" class="h" >Queue filters</text>
+<rect x="68" y="208" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="82" y="232" class="body" >Dates / display window</text>
+<rect x="508" y="208" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="522" y="232" class="body" >Device</text>
+<rect x="948" y="208" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="962" y="232" class="body" >User state</text>
+<rect x="68" y="256" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="82" y="280" class="body" >Tags</text>
+<rect x="508" y="256" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="522" y="280" class="body" >Markers</text>
+<rect x="948" y="256" width="416" height="36" rx="6" fill="#fffefa" stroke="#d6d3c9"/>
+<text x="962" y="280" class="body" >Additional parameters</text>
+<text x="44" y="354" class="label" >QUEUE DIAGRAM / DISPLAY SIMULATION</text>
+<rect x="44" y="570" width="280" height="300" rx="12" fill="#e4e6df" stroke="#cfd3c8"/>
+<text x="60" y="597" class="small" >Popup A · preview</text>
+<rect x="60" y="614" width="248" height="240" rx="10" fill="#fffefa" stroke="none"/>
+<rect x="60" y="614" width="248" height="64" rx="10" fill="#d9e1d0" stroke="none"/>
+<circle cx="184" cy="646" r="17" fill="#fffefa" opacity=".55"/>
+<text x="80" y="712" class="h" >Welcome</text>
+<text x="80" y="739" class="small" >Choose your next step.</text>
+<rect x="80" y="750" width="208" height="40" rx="7" fill="#303c33" stroke="none"/>
+<text x="184.0" y="776" text-anchor="middle" style="font:16px Arial;fill:#fffefa">View offer</text>
+<rect x="80" y="802" width="208" height="40" rx="7" fill="#fffefa" stroke="#9fa998"/>
+<text x="184.0" y="828" text-anchor="middle" style="font:16px Arial;fill:#50564e">Set preferences</text>
+<rect x="600" y="396" width="280" height="300" rx="12" fill="#e4e6df" stroke="#cfd3c8"/>
+<text x="616" y="423" class="small" >Popup B · preview</text>
+<rect x="616" y="440" width="248" height="240" rx="10" fill="#fffefa" stroke="none"/>
+<rect x="616" y="440" width="248" height="64" rx="10" fill="#e6d9bb" stroke="none"/>
+<circle cx="740" cy="472" r="17" fill="#fffefa" opacity=".55"/>
+<text x="636" y="538" class="h" >Campaign</text>
+<text x="636" y="565" class="small" >Explore the current offer.</text>
+<rect x="636" y="628" width="208" height="40" rx="7" fill="#303c33" stroke="none"/>
+<text x="740.0" y="654" text-anchor="middle" style="font:16px Arial;fill:#fffefa">Continue</text>
+<rect x="600" y="746" width="280" height="300" rx="12" fill="#e4e6df" stroke="#cfd3c8"/>
+<text x="616" y="773" class="small" >Popup C · preview</text>
+<rect x="616" y="790" width="248" height="240" rx="10" fill="#fffefa" stroke="none"/>
+<rect x="616" y="790" width="248" height="64" rx="10" fill="#d4dfe3" stroke="none"/>
+<circle cx="740" cy="822" r="17" fill="#fffefa" opacity=".55"/>
+<text x="636" y="888" class="h" >Preferences</text>
+<text x="636" y="915" class="small" >Choose what matters to you.</text>
+<rect x="636" y="978" width="208" height="40" rx="7" fill="#303c33" stroke="none"/>
+<text x="740.0" y="1004" text-anchor="middle" style="font:16px Arial;fill:#fffefa">Save preferences</text>
+<rect x="1116" y="396" width="280" height="300" rx="12" fill="#e4e6df" stroke="#cfd3c8"/>
+<text x="1132" y="423" class="small" >Popup D · preview</text>
+<rect x="1132" y="440" width="248" height="240" rx="10" fill="#fffefa" stroke="none"/>
+<rect x="1132" y="440" width="248" height="64" rx="10" fill="#ded7e7" stroke="none"/>
+<circle cx="1256" cy="472" r="17" fill="#fffefa" opacity=".55"/>
+<text x="1152" y="538" class="h" >Confirmation</text>
+<text x="1152" y="565" class="small" >Your choice is saved.</text>
+<rect x="1152" y="628" width="208" height="40" rx="7" fill="#303c33" stroke="none"/>
+<text x="1256.0" y="654" text-anchor="middle" style="font:16px Arial;fill:#fffefa">Done</text>
+<path class="edge" d="M288 770H366V648H590"/>
+<text x="394" y="600" class="small" >Click “View offer”</text>
+<text x="394" y="625" class="small" >After delay Δt</text>
+<path class="edge" d="M288 822H366V998H590"/>
+<text x="394" y="950" class="small" >Click “Set preferences”</text>
+<text x="394" y="975" class="small" >At the configured date</text>
+<path class="edge" d="M844 648H1106"/>
+<text x="918" y="600" class="small" >Click “Continue”</text>
+<text x="918" y="625" class="small" >Next eligible popup</text>
+<text x="44" y="1070" class="small" >Reconstructed interface layout. Popup content, action labels and timing values are illustrative.</text>
+</svg>

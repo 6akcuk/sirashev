@@ -1,0 +1,13 @@
+{
+  "order": "2020-04",
+  "period": "Apr 2020 — Jun 2022",
+  "title": "Senior Frontend Developer",
+  "company": "Playtomic",
+  "location": "Spain · remote",
+  "bullets": [
+    "Built and launched a sports-club TV interface for match statistics, player standings and schedules.",
+    "Developed admin payment interfaces and pricing rules by date, area, sport and player count.",
+    "Migrated payments, schedules and court management to a feature-based architecture.",
+    "Prototyped a Cypress API record/replay plugin to address backend timeout failures; validated stability on two tests."
+  ]
+}

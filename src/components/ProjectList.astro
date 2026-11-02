@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+type Props = { projects: CollectionEntry<'cases'>[] };
+const { projects } = Astro.props;
+---
+<div class="project-list">
+  {projects.map(({ id, data: p }) => (
+    <a class="project-row" href={`/projects/${id}/`}>
+      <span class="project-num">{p.num}</span>
+      <div>
+        <span class="eyebrow">{p.company} <span class="project-status">/ {p.status}</span></span>
+        <h3>{p.title}</h3>
+        <p>{p.summary}</p>
+        <span class="stack">{p.stack.join(' · ')}</span>
+        {p.images[0] && <img class:list={["project-preview", { "project-preview-portrait": p.images[0].height > p.images[0].width }]} src={p.images[0].src} alt={p.images[0].alt} width={p.images[0].width} height={p.images[0].height} loading="lazy" decoding="async" />}
+      </div>
+      <span class="project-arrow" aria-hidden="true">↗</span>
+    </a>
+  ))}
+</div>

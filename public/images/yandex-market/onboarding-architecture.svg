@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1490" viewBox="0 0 1040 1490" role="img" aria-labelledby="title desc">
+<title id="title">Yandex Market — onboarding eligibility and popup orchestration</title>
+<desc id="desc">A Market page request reaches the backend. The backend fetches an onboarding queue. Candidates are checked sequentially in small tasks that yield to the event loop. Rules may request user, order, tag and marker data from microservices. Matching candidates, possibly none, enter a separate frontend popup queue alongside other popup types. Priority and current status select the first eligible window, with at most one visible. Page navigation triggers the next selection.</desc>
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#7c786f"/></marker>
+ <style>text{font-family:Arial,Helvetica,sans-serif;fill:#252824}.title{font-size:32px;font-weight:600;letter-spacing:-1px}.sub{font-size:18px;fill:#696d65}.label{font-size:15px;letter-spacing:1.2px;fill:#8f512f;font-weight:600}.h{font-size:22px;font-weight:600}.body{font-size:18px;fill:#50564e}.small{font-size:16px;fill:#696d65}.box{fill:#fffefa;stroke:#d6d3c9;stroke-width:1.5}.edge{fill:none;stroke:#7c786f;stroke-width:2;marker-end:url(#arrow)}.dash{stroke-dasharray:6 5}</style>
+</defs>
+<rect width="1040" height="1490" rx="16" fill="#f4f2eb"/>
+<text class="title" x="44" y="60">A queue to qualify. A queue to show.</text>
+<text class="sub" x="44" y="94">Yandex Market · popup &amp; onboarding architecture</text>
+<text class="small" x="44" y="123">Backend eligibility → frontend orchestration · conceptual reconstruction</text>
+
+<rect x="24" y="150" width="992" height="733" rx="14" fill="#eaece3"/>
+<text class="label" x="48" y="185">01 / BACKEND — ONBOARDING ELIGIBILITY</text>
+<rect class="box" x="60" y="210" width="548" height="64" rx="9"/>
+<text class="h" x="334" y="249" text-anchor="middle">Page request reaches the backend</text>
+<path class="edge" d="M334 274V300"/>
+<rect class="box" x="60" y="300" width="548" height="76" rx="9"/>
+<text class="h" x="334" y="331" text-anchor="middle">Fetch onboarding queue</text>
+<text class="body" x="334" y="358" text-anchor="middle">Read candidates sequentially</text>
+<path class="edge" d="M334 376V406"/>
+<rect class="box" x="60" y="406" width="548" height="148" rx="9"/>
+<text class="h" x="84" y="440">Evaluate one candidate’s conditions</text>
+<text class="body" x="84" y="473">Compare requirements with current values</text>
+<text class="body" x="84" y="501">Check dates, device and additional labels</text>
+<text class="small" x="84" y="531">Each rule runs as a small unit of work</text>
+<rect class="box" x="680" y="406" width="300" height="148" rx="9"/>
+<text class="h" x="704" y="440">Microservices</text>
+<text class="body" x="704" y="474">Users · orders</text>
+<text class="body" x="704" y="502">User tags · markers</text>
+<text class="small" x="704" y="531">Only if a condition needs them</text>
+<path class="edge" d="M608 462H680"/><path class="edge" d="M680 510H608"/>
+<text class="small" x="830" y="587" text-anchor="middle">Request data as needed;</text>
+<text class="small" x="830" y="610" text-anchor="middle">compare before accepting</text>
+<path class="edge" d="M334 554V584"/>
+<rect x="60" y="584" width="548" height="86" rx="9" fill="#faf7ec" stroke="#c8b992" stroke-width="1.5"/>
+<text class="h" x="84" y="617">Yield between small tasks</text>
+<text class="body" x="84" y="646">Yield to the Node.js event loop between tasks</text>
+<path class="edge dash" d="M60 627H42V480H60"/>
+<text class="small" x="700" y="650">Repeat for remaining</text>
+<text class="small" x="700" y="674">rules and candidates</text>
+<path class="edge" d="M334 670V736"/>
+<rect class="box" x="60" y="736" width="548" height="92" rx="9"/>
+<text class="h" x="84" y="771">Collect 0…N matching onboardings</text>
+<text class="body" x="84" y="801">Non-matching candidates are filtered out</text>
+<path class="edge dash" d="M608 782H680"/>
+<text class="body" x="700" y="774">0 matches?</text>
+<text class="small" x="700" y="801">No onboarding is enqueued.</text>
+<text class="small" x="60" y="858">Backend returns 0…N eligible onboardings to the browser.</text>
+
+<rect x="24" y="910" width="992" height="532" rx="14" fill="#efe7dc"/>
+<text class="label" x="48" y="945">02 / FRONTEND — WHICH POPUP SHOWS NOW?</text>
+<path class="edge" d="M334 828V838H640V1016H608"/>
+<rect class="box" x="60" y="974" width="548" height="84" rx="9"/>
+<text class="h" x="84" y="1009">Popup display queue</text>
+<text class="body" x="84" y="1038">Matching onboardings join a separate UI queue</text>
+<rect class="box" x="680" y="974" width="300" height="84" rx="9"/>
+<text class="h" x="704" y="1007">Other popup types</text>
+<text class="body" x="704" y="1036">Ads · forms · menus · settings</text>
+<path class="edge" d="M680 1016H608"/>
+<path class="edge" d="M334 1058V1086"/>
+<rect class="box" x="60" y="1086" width="548" height="92" rx="9"/>
+<text class="h" x="84" y="1120">Select the first eligible popup</text>
+<text class="body" x="84" y="1150">Consider priorities and the current UI status</text>
+<path class="edge" d="M334 1178V1206"/>
+<rect x="60" y="1206" width="548" height="96" rx="9" fill="#303c33"/>
+<text x="84" y="1243" style="font-size:23px;font-weight:600;fill:#fffefa">At most one popup visible</text>
+<text x="84" y="1274" style="font-size:18px;fill:#e2e8de">Keep remaining windows queued, not stacked</text>
+<rect class="box" x="680" y="1120" width="300" height="108" rx="9"/>
+<text class="h" x="704" y="1154">Page navigation</text>
+<text class="body" x="704" y="1184">Run selection again;</text>
+<text class="body" x="704" y="1210">choose the next eligible item</text>
+<path class="edge" d="M680 1140H608"/>
+<text class="small" x="60" y="1350">The shared display queue coordinates promotional and ordinary UI windows.</text>
+<text class="small" x="60" y="1378">One-at-a-time presentation prevents competing overlays and interruptions.</text>
+<text class="small" x="44" y="1473">Stack: Apiary (Next.js) · React · Node.js · RxJS · Cookies · ClickHouse · Microservices</text>
+</svg>

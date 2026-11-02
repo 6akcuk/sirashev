@@ -1,0 +1,14 @@
+{
+  "order": "2022-11",
+  "period": "Nov 2022 — Feb 2025",
+  "title": "Software Engineer, Interfaces",
+  "company": "Yandex Market",
+  "location": "Moscow",
+  "bullets": [
+    "Unified 19 authentication entry points; the mechanism was also adopted by Market B2B.",
+    "Added a popup authentication action. Internal 11.11 campaign analytics showed an approximately 10% relative increase in authentication conversion.",
+    "Extended onboarding across Market, Market B2B and Yandex Go; an emulator helped marketing scale from 2–4 to about 20 concurrent popups.",
+    "Brought CLS and FCP within target thresholds, verified through Lighthouse and internal monitoring.",
+    "Investigated on-call alerts with ClickHouse logs and independently conducted 30+ coding interviews."
+  ]
+}

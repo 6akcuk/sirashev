@@ -1,0 +1,66 @@
+{
+  "num": "06",
+  "title": "StarTrack — family tasks, stars and rewards",
+  "summary": "A React Native family app with parent approvals, per-child star balances, rewards and photo or video proof. Built with AI agents, GitHub Issues and automated quality checks.",
+  "stack": [
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Firebase",
+    "Cloud Functions"
+  ],
+  "year": "2026",
+  "role": "Developer & AI engineer",
+  "company": "StarTrack · personal project",
+  "status": "Personal project · in development",
+  "description": "StarTrack turns household tasks into a shared family routine. Children submit completed tasks, parents approve them, and earned stars can be spent on rewards. The project combines a mobile interface with server-controlled balances, family access rules and an auditable history. I build the project with AI coding agents, combining AFK execution, human-in-the-loop review and multi-agent coordination.",
+  "sections": [
+    {
+      "heading": "Two sides of the same routine",
+      "body": "The child experience brings together tasks, earned stars, urgent requests and a reward shop. Parents manage tasks and rewards, review completed work, and hand over purchased rewards. The code also supports daily rewards and photo or video proof, with a reason when a submission is rejected."
+    },
+    {
+      "heading": "Balances that stay consistent",
+      "body": "Cloud Functions validate approvals and update completion status, the child’s balance and its ledger within a Firestore transaction. Repeating an approval produces no extra credit. Purchases and refunds use the same server-controlled approach, while security rules prevent clients from writing balances directly."
+    },
+    {
+      "heading": "Families and children as explicit boundaries",
+      "body": "A device can belong to multiple families, with separate child identities, balances, completions and histories. Family membership and parent or child roles govern access. A PIN gates parent controls, while Firestore and Storage rules enforce access to family records and uploaded proof."
+    },
+    {
+      "heading": "Time-sensitive tasks and media lifecycle",
+      "body": "Urgent tasks have time-dependent rewards and scheduled expiry processing. The backend also handles reminders and notifications. Photo and video proof have upload, review and cleanup flows, including video thumbnails, so media handling extends beyond a file-picker interface."
+    },
+    {
+      "heading": "A mobile codebase with clear module boundaries",
+      "body": "The application uses React Native, Expo and TypeScript, with Firebase Authentication, Firestore, Storage and Cloud Functions. Feature-Sliced Design separates pages, widgets, features, entities and shared infrastructure. The repository includes security-rule and function tests, architecture decisions, and English and Russian localization."
+    },
+    {
+      "heading": "Implementation and design previews",
+      "body": "The repository contains working feature implementations beyond its original walking-skeleton README. The images above are English translations of the project’s design handoff, with illustrative family data; they show the design direction rather than a live family session. Public release and production usage are not claimed."
+    },
+    {
+      "heading": "AI development: AFK, HITL and multiple agents",
+      "body": "I combine AFK (away-from-keyboard) execution for scoped implementation tasks with HITL (human-in-the-loop) involvement for requirements, architecture, review and product validation. Multiple agents work on defined tasks with clear boundaries. I coordinate their work, integrate the changes and remain responsible for the resulting software."
+    },
+    {
+      "heading": "GitHub Issues and the agent harness",
+      "body": "I track work through GitHub Issues, giving agents a concrete task, context and acceptance criteria. The harness brings together repository instructions, tools and feedback loops. Existing code examples provide reference patterns for implementation, helping agents follow the project’s conventions."
+    },
+    {
+      "heading": "Quality checks and feedback",
+      "body": "Typecheck, lint and tests form the automated quality checks in the development workflow. Their results feed back into implementation and fixes. I review the resulting code and validate user-facing behavior alongside those checks."
+    }
+  ],
+  "published": true,
+  "links": [],
+  "images": [
+    {
+      "src": "/images/startrack/overview.webp",
+      "alt": "English StarTrack design previews showing child tasks and stars beside parent approvals and reward handover",
+      "caption": "Child and parent views translated from the StarTrack design handoff. Design previews with an illustrative family and sample data.",
+      "width": 1440,
+      "height": 1160
+    }
+  ]
+}
