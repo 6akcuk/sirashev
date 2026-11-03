@@ -163,3 +163,8 @@ p, h2, h3 { margin: 0; }
 .article-body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
 .article-body th, .article-body td { text-align: left; border: 1px solid var(--line); padding: 8px 12px; }
 @media (max-width: 760px) { .article-body { font-size: 16px; } .article-body h2 { font-size: 24px; } }
+
+.ryab-journal-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 40%); align-items: center; gap: 36px; }
+.ryab-journal-intro p { color: var(--body); max-width: 520px; margin-top: 14px; }
+.ryab-journal-intro img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+@media (max-width: 760px) { .ryab-journal-intro { grid-template-columns: 1fr; gap: 24px; } }

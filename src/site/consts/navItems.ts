@@ -5,5 +5,6 @@ export const navItems: NavItem[] = [
   { label: 'About', href: '/' },
   { label: 'Projects', href: '/projects' },
   { label: 'Articles', href: '/articles' },
+  { label: 'Ryab Journal', href: '/ryab-journal' },
   { label: 'Experience', href: '/experience' },
 ];

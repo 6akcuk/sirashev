@@ -17,7 +17,7 @@ for (const file of files) {
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${file}: one main heading required`);
   assert(!/<script\b/.test(html), `${file}: static pages must not ship client scripts`);
   const nav = html.match(/<nav\b[^>]*>(.*?)<\/nav>/s)?.[1] || '';
-  assert.equal((nav.match(/<a\b/g) || []).length, 4, `${file}: four navigation links required`);
+  assert.equal((nav.match(/<a\b/g) || []).length, 5, `${file}: five navigation links required`);
   for (const img of html.matchAll(/<img\b[^>]*>/g)) {
     assert(/alt="[^"]+"/.test(img[0]), `${file}: image needs descriptive alt text`);
     const src = img[0].match(/src="([^"]+)"/)?.[1];
@@ -33,7 +33,7 @@ for (const file of files) {
     if (exists.isDirectory()) assert(await stat(join(target,'index.html')).catch(()=>null), `${file}: page missing ${href}`);
   }
 }
-assert.equal(files.length, 24);
+assert.equal(files.length, 26);
 const ryab = await readFile('dist/projects/ryab/index.html','utf8');
 assert(ryab.includes('Working development preview'));
 assert(ryab.includes('https://dev.ryab.io'));

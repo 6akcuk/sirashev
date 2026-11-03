@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
+import { identity } from '../../site/consts/identity';
+export async function getStaticPaths() {
+  return (await getCollection('ryabJournal')).map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { data } = post;
+const date = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(data.publishedAt);
+---
+<BaseLayout title={`${data.title} — ${identity.name}`} description={data.description} lang="ru">
+  <ContentPage maxWidth="960px">
+    <header class="case-header article-header"><a class="back-link" href="/ryab-journal/">← Дневник Ryab</a><h1>{data.title}</h1><p class="intro">{data.description}</p><div class="eyebrow article-meta"><time datetime={data.publishedAt.toISOString()}>{date}</time></div></header>
+    <article class="article-body"><Content /></article>
+    <footer class="case-footer"><a href="/ryab-journal/">← Все записи</a><a href="https://t.me/fromcode2product">Канал в Telegram ↗</a></footer>
+  </ContentPage>
+</BaseLayout>

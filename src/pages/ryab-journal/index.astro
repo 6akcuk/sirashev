@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { identity } from '../../site/consts/identity';
+const posts = (await getCollection('ryabJournal')).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const date = (value: Date) => new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(value);
+---
+<BaseLayout title={`Дневник Ryab — ${identity.name}`} description="Дневник разработки Ryab: архитектура, продуктовые решения и работа с AI-агентами." lang="ru">
+  <ContentPage maxWidth="1120px">
+    <PageHeader heading="Дневник Ryab"><p class="intro">Как я создаю карту событий города: инженерные решения, эксперименты и то, что узнаю по пути.</p></PageHeader>
+    <section class="ryab-journal-intro" aria-label="О проекте">
+      <div><span class="eyebrow">ЛИЧНЫЙ ПРОЕКТ / В РАЗРАБОТКЕ</span><p>Ryab помогает узнавать, что происходит рядом. Доступна работающая версия для разработки; публичный релиз ещё не состоялся.</p><div class="case-links"><a class="text-link" href="/projects/ryab/">О проекте →</a><a class="secondary-link" href="https://dev.ryab.io">Открыть версию для разработки ↗</a></div></div>
+      <img src="/images/ryab/overview.webp" alt="Макеты карты Ryab в дневной и ночной темах" width="1440" height="1160" />
+    </section>
+    <section aria-label="Записи дневника"><div class="section-heading"><h2>Записи</h2><span class="eyebrow">{posts.length}</span></div><div class="writing-list">{posts.map(({id,data}) => <article><div class="eyebrow"><time datetime={data.publishedAt.toISOString()}>{date(data.publishedAt)}</time></div><h3><a href={`/ryab-journal/${id}/`}>{data.title}</a></h3><p>{data.description}</p></article>)}</div></section>
+    <section class="note"><h2>Продолжение — в Telegram</h2><p>Короткие наблюдения, рабочий процесс и обсуждения между записями дневника.</p><a class="text-link" href="https://t.me/fromcode2product">From Code to Product ↗</a></section>
+  </ContentPage>
+</BaseLayout>

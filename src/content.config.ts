@@ -31,4 +31,8 @@ const articles = defineCollection({
     sourceUrl: z.string().url(),
   }),
 });
-export const collections = { cases, jobs, articles };
+const ryabJournal = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/ryab-journal' }),
+  schema: z.object({ title: text, description: text, publishedAt: z.coerce.date() }),
+});
+export const collections = { cases, jobs, articles, ryabJournal };
