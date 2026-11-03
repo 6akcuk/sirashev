@@ -35,9 +35,9 @@ for (const file of files) {
 }
 assert.equal(files.length, 26);
 const ryab = await readFile('dist/projects/ryab/index.html','utf8');
-assert(ryab.includes('Working development preview'));
-assert(ryab.includes('https://dev.ryab.io'));
+assert(ryab.includes('Rebuilding from scratch')); 
+assert(ryab.includes('https://sirashev.com/ryab-journal/'));
 assert(ryab.includes('/images/ryab/overview.webp'));
-assert(ryab.includes('English design preview'));
-assert(ryab.includes('development benchmarks, not production traffic metrics'));
+assert(ryab.includes('Earlier design concept'));
+assert(ryab.includes('historical development benchmarks'));
 console.log(`Verified ${files.length} static pages: metadata, navigation, local links, release status and zero client JS.`);

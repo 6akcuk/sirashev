@@ -7,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { identity } from '../site/consts/identity';
 const projects = (await getCollection('cases', ({ data }) => data.published)).sort((a,b) => a.data.num.localeCompare(b.data.num));
 ---
-<BaseLayout title={`Projects — ${identity.name}`} description="Selected engineering work: Linked Helper multi-account support, Yandex Market authentication and onboarding, Ryab's local AI media pipeline, and an AngularJS 1.x product configurator.">
+<BaseLayout title={`Projects — ${identity.name}`} description="Selected engineering work: Linked Helper multi-account support, Yandex Market authentication and onboarding, the Ryab rebuild, and an AngularJS 1.x product configurator.">
   <ContentPage maxWidth="1120px">
     <PageHeader heading="Selected work"><p class="intro">The problems, the work I owned, and the results. Commercial features alongside personal experiments, with their release status made explicit.</p></PageHeader>
     <ProjectList projects={projects} />

@@ -1,23 +1,23 @@
 ---
-title: "Ryab: зачем я создаю карту событий города"
-description: "О проекте, его текущем состоянии и темах будущего дневника."
+title: "Ryab: rebuilding a city events map from scratch"
+description: "An introduction to the project, its new direction, and this development journal."
 publishedAt: "2026-11-03"
 ---
 
-Ryab — мой личный проект: карта, на которой можно сообщать о событиях в городе и узнавать, что происходит рядом. В этом дневнике я буду рассказывать о разработке: как устроен продукт, какие решения я принимаю и что узнаю в процессе.
+Ryab is my personal project: a map for discovering and sharing information about what is happening in a city. I am now rebuilding it from scratch with a new architecture.
 
-## Что уже есть
+The previous version gave me experience to draw on, but the new architecture is a fresh development effort. I will describe its components and decisions as they take shape rather than presenting the previous implementation as the current one.
 
-У проекта есть [работающая версия для разработки](https://dev.ryab.io). Это не публичный релиз готового продукта: проект продолжает развиваться и тестироваться. На карте задуманы сообщения о событиях и возможность подтверждать или оспаривать информацию вместе с другими пользователями.
+## The new direction
 
-## Как устроена разработка
+The new architecture starts with information from city sources and works toward a clearer picture of developing events. An early focus is distinguishing an individual signal from the city event it may describe, while accounting for uncertainty in extracted information.
 
-В интерфейсе используются React, TypeScript и MapLibre. Серверная часть работает на Node.js; PostgreSQL, Redis и BullMQ помогают хранить данные и организовывать обработку задач. Для обработки текста и медиа я использую локальные модели Qwen.
+The current work includes a local development environment and an initial API foundation. The wider processing flow is still being designed and built, so planned components should not be mistaken for completed features.
 
-Я разрабатываю проект с помощью AI-агентов: формулирую требования, определяю архитектуру, проверяю изменения и пользовательские сценарии. Автоматические проверки дополняют ревью, но ответственность за результат остаётся за мной.
+## What this journal is about
 
-## О чём будет дневник
+I will use this journal to document the journey from an idea to a working product: product decisions, architecture, implementation, experiments, and things I learn along the way. Where I refer to the previous version, I will make that distinction clear.
 
-Здесь будут заметки об инженерных и продуктовых решениях: от устройства карты и обработки данных до работы с агентами, экспериментов и ошибок. Если результат получен в разработке, а не на реальной нагрузке, я буду отдельно это отмечать.
+I work with AI coding agents while remaining responsible for requirements, technical direction, review, and validation. This journal is also a place to examine how that process works in practice.
 
-Подробнее о проекте и его архитектуре — в [описании Ryab](/projects/ryab/). Короткими заметками и процессом я также делюсь в [Telegram-канале From Code to Product](https://t.me/fromcode2product).
+For an overview of the project, see the [Ryab project page](/projects/ryab/). I also share shorter updates in my Russian-language Telegram channel, [From Code to Product](https://t.me/fromcode2product).

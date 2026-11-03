@@ -168,3 +168,5 @@ p, h2, h3 { margin: 0; }
 .ryab-journal-intro p { color: var(--body); max-width: 520px; margin-top: 14px; }
 .ryab-journal-intro img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
 @media (max-width: 760px) { .ryab-journal-intro { grid-template-columns: 1fr; gap: 24px; } }
+.journal-preview { margin: 0; }
+.journal-preview figcaption { color: var(--muted); font-size: 12px; margin-top: 8px; }
