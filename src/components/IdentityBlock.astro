@@ -4,7 +4,7 @@ import { identity } from '../site/consts/identity';
 
 <div class="identity">
   <a class="avatar" href="/" aria-label={`${identity.name} — home`}>
-    <span class="avatar-label">DS</span>
+    <img src="/images/portrait/denis-avatar.jpg" alt="Denis Sirashev" width="290" height="290" />
   </a>
   <div class="identity-text">
     <a class="name" href="/">{identity.name}</a>
@@ -33,10 +33,11 @@ import { identity } from '../site/consts/identity';
     text-decoration: none;
   }
 
-  .avatar-label {
-    font-family: var(--font-mono);
-    font-size: 22px;
-    color: var(--accent);
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .identity-text {
