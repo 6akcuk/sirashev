@@ -33,7 +33,7 @@ for (const file of files) {
     if (exists.isDirectory()) assert(await stat(join(target,'index.html')).catch(()=>null), `${file}: page missing ${href}`);
   }
 }
-assert.equal(files.length, 26);
+assert.equal(files.length, 27);
 const ryab = await readFile('dist/projects/ryab/index.html','utf8');
 assert(ryab.includes('Rebuilding from scratch')); 
 assert(ryab.includes('https://sirashev.com/ryab-journal/'));

@@ -156,6 +156,8 @@ p, h2, h3 { margin: 0; }
 .article-body h3 { font-size: 21px; }
 .article-body a { color: var(--accent); }
 .article-body img { display: block; max-width: 100%; height: auto; border-radius: 6px; }
+.article-body figure { margin-left: 0; margin-right: 0; }
+.article-body figcaption { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 8px; }
 .article-body pre { overflow-x: auto; padding: 20px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; line-height: 1.6; }
 .article-body code { font-family: var(--font-mono); font-size: .88em; }
 .article-body pre code { font-size: inherit; }
