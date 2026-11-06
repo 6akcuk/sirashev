@@ -36,4 +36,3 @@ I plan to take parts of the first version that have already proved useful and br
 
 This journal will follow the decisions behind Ryab: the architecture, the product, and how I work with AI agents while building them.
 
-I also share shorter updates in my Russian-language Telegram channel, [From Code to Product](https://t.me/fromcode2product).
