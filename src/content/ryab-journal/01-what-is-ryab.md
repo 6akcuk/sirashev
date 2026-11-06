@@ -1,6 +1,7 @@
 ---
 title: "Rebuilding Ryab: what I learned from working with AI agents"
 description: "Why I am starting a new version of Ryab, and how I want to balance development speed with understanding the product."
+telegramUrl: "https://t.me/fromcode2product/3"
 publishedAt: "2026-11-03"
 ---
 

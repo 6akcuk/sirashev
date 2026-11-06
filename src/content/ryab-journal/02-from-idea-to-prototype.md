@@ -1,6 +1,7 @@
 ---
 title: "From idea to prototype: shaping the new Ryab with AI"
 description: "How I used AI to develop the idea behind Ryab and explore its data flow and interface in a few hours."
+telegramUrl: "https://t.me/fromcode2product/5"
 publishedAt: "2026-11-05"
 ---
 

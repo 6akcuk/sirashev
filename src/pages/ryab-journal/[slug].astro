@@ -17,8 +17,8 @@ const date = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year
     <article class="article-body"><Content /></article>
     <section class="note" aria-label="Continue the conversation">
       <h2>Continue the conversation</h2>
-      <p>Follow Ryab updates and share your thoughts in my Russian-language Telegram channel.</p>
-      <a class="text-link" href="https://t.me/fromcode2product">From Code to Product on Telegram ↗</a>
+      <p>{data.telegramUrl ? "Read the Russian-language post in my Telegram channel and join the conversation there." : "Follow Ryab updates in my Russian-language Telegram channel."}</p>
+      <a class="text-link" href={data.telegramUrl ?? "https://t.me/fromcode2product"}>{data.telegramUrl ? "Read the Telegram post ↗" : "From Code to Product on Telegram ↗"}</a>
     </section>
     <footer class="case-footer"><a href="/ryab-journal/">← All entries</a></footer>
   </ContentPage>
